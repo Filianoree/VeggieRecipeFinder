@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font e stile di base per il corpo */
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column; /* Cambiato il layout per una colonna */
+  align-items: center; /* Centrato il contenuto lungo l'asse orizzontale */
+  padding: 20px;
+}
+
+/* Stili per il contenitore principale */
+.container {
+  max-width: 800px; /* Larghezza massima del contenitore */
+  width: 100%; /* Adattato alla larghezza del viewport */
+}
+
+/* Stili per il titolo */
+.title {
+  text-align: center;
+  color: #a6449c;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Stili per la barra di ricerca */
+.search-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #cf408f86;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #cf408f;
+}
+
+/* Layout a griglia per la lista delle ricette */
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%; /* Occupa tutto lo spazio disponibile */
+}
+
+/* Stili per il singolo risultato della ricetta */
+.recipe {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.recipe:hover {
+  transform: translateY(-5px);
+}
+
+.recipe img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe h2 {
+  padding: 15px;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center; /* Centrato il titolo */
+}
+
+/* Stili per la sezione dei dettagli della ricetta */
+.recipe-details {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.recipe-details img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Stili per le istruzioni della ricetta */
+.instructions {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Stili per i testi in grassetto */
+span {
+  font-weight: bold;
+}
+
+/* Stili per il bottone "Back to Search" */
+.back-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #cf408f90;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #cf408f;
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-bar button {
+    width: 100%;
+  }
+
+  .recipe h2 {
+    font-size: 1.1rem;
+  }
+
+  .recipe img {
+    height: 150px;
+  }
+
+  .recipe-details img {
+    max-width: 300px;
+  }
+}
