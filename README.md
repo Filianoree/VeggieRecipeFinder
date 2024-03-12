@@ -1,6 +1,4 @@
 Veggie Recipe Finder
-Veggie Recipe Finder
-
 Description
 Veggie Recipe Finder is a web application that allows users to search for vegetarian recipes. Users can enter keywords related to the recipe they are looking for, and the application will display a list of relevant recipes. Each recipe card includes an image, title, and brief description. Users can click on a recipe card to view more details, including the ingredients and instructions.
 
