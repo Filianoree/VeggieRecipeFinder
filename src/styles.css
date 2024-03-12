@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* Font e stile di base per il corpo */
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -13,13 +12,11 @@ body {
   padding: 20px;
 }
 
-/* Stili per il contenitore principale */
 .container {
   max-width: 800px; 
   width: 100%; 
 }
 
-/* Stili per il titolo */
 .title {
   text-align: center;
   color: #a6449c;
@@ -27,7 +24,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Stili per la barra di ricerca */
 .search-bar {
   width: 100%;
   display: flex;
