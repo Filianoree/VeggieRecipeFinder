@@ -27,3 +27,19 @@ To run this project locally, follow these steps:
 
 ```bash
 git clone https://github.com/your-username/veggie-recipe-finder.git
+Navigate to the project directory:
+bash
+Copy code
+cd veggie-recipe-finder
+Install dependencies:
+bash
+Copy code
+npm install
+Start the development server:
+bash
+Copy code
+npm start
+Open your web browser and visit http://localhost:3000.
+Credits
+This project was created by Oday Deb.
+
