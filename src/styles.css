@@ -8,15 +8,15 @@
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
-  flex-direction: column; /* Cambiato il layout per una colonna */
-  align-items: center; /* Centrato il contenuto lungo l'asse orizzontale */
+  flex-direction: column; 
+  align-items: center; 
   padding: 20px;
 }
 
 /* Stili per il contenitore principale */
 .container {
-  max-width: 800px; /* Larghezza massima del contenitore */
-  width: 100%; /* Adattato alla larghezza del viewport */
+  max-width: 800px; 
+  width: 100%; 
 }
 
 /* Stili per il titolo */
@@ -60,15 +60,15 @@ body {
   background-color: #cf408f;
 }
 
-/* Layout a griglia per la lista delle ricette */
+
 .recipe-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  width: 100%; /* Occupa tutto lo spazio disponibile */
+  width: 100%; 
 }
 
-/* Stili per il singolo risultato della ricetta */
+
 .recipe {
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -92,7 +92,7 @@ body {
   margin: 0;
   font-size: 1.2rem;
   color: #333;
-  text-align: center; /* Centrato il titolo */
+  text-align: center; 
 }
 
 /* Stili per la sezione dei dettagli della ricetta */
@@ -125,12 +125,12 @@ body {
   margin-bottom: 20px;
 }
 
-/* Stili per i testi in grassetto */
+
 span {
   font-weight: bold;
 }
 
-/* Stili per il bottone "Back to Search" */
+
 .back-button {
   display: block;
   margin-top: 20px;
