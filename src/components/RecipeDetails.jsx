@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 function RecipeDetails({ recipe, onBackToSearch }) {
   const [instructions, setInstructions] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchInstructions = async () => {
@@ -15,8 +17,10 @@ function RecipeDetails({ recipe, onBackToSearch }) {
           ""
         );
         setInstructions(plainTextInstructions);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching recipe details:", error);
+        setLoading(false);
       }
     };
 
@@ -24,15 +28,22 @@ function RecipeDetails({ recipe, onBackToSearch }) {
   }, [recipe.id]);
 
   return (
-    <div className="recipe-details">
+    <div>
+      <Helmet>
+        <title>{recipe.title}</title>
+      </Helmet>
       <h2>{recipe.title}</h2>
-      <img src={recipe.image} alt={recipe.title} />
-      <p className="instructions">
-        <span>Instructions:</span> {instructions}
-      </p>
-      <button onClick={onBackToSearch} className="back-button">
-        Back to Search
-      </button>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <img src={recipe.image} alt={recipe.title} />
+          <p className="instructions">Instructions: {instructions}</p>
+          <button onClick={onBackToSearch} className="back-button">
+            Back to Search
+          </button>
+        </div>
+      )}
     </div>
   );
 }

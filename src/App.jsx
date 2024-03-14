@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from "react";
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
@@ -9,8 +8,10 @@ import "./styles.css";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const searchRecipes = async (query) => {
+    setLoading(true);
     try {
       const response = await axios.get(
         `https://api.spoonacular.com/recipes/complexSearch?query=${query}&diet=vegetarian&apiKey=d4783cb5909b440e8cb637408f1473aa`
@@ -18,6 +19,8 @@ function App() {
       setRecipes(response.data.results);
     } catch (error) {
       console.error("Error fetching recipes:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -40,7 +43,12 @@ function App() {
       ) : (
         <>
           <SearchBar onSearch={searchRecipes} />
-          <RecipeList recipes={recipes} onRecipeClick={handleRecipeClick} />
+          {/* Mostra il loader solo quando è attivo */}
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            <RecipeList recipes={recipes} onRecipeClick={handleRecipeClick} />
+          )}
         </>
       )}
     </div>
