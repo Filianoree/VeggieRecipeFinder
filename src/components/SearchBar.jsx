@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 function SearchBar({ onSearch }) {
-  const [query, setQuery] = useState("");
+  const { register, handleSubmit } = useForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(query);
+  const onSubmit = (data) => {
+    onSearch(data.query);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="search-bar">
+    <form onSubmit={handleSubmit(onSubmit)} className="search-bar">
       <input
         type="text"
         placeholder="Search for recipes..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        {...register("query")}
       />
       <button type="submit">Search</button>
     </form>
